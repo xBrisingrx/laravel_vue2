@@ -11,5 +11,18 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+// A mix le pasamos el tipo de archivo y un array con los archivos a 
+// compilar en caso que sea mas de uno caso contrario se pasa simplemente el archivo derecho,
+// por ultimo el nombre del archivo resultante 
+
+mix.style(['resources/assets/template/css/font-awesome.mi.css',
+					 'resources/assets/template/css/simple-line-icons.mi.css',
+					 'resources/assets/template/css/style.mi.css'], 
+					 'public/css/template.css')
+	 .scripts(['resources/assets/template/js/jquery.min.js',
+	 					 'resources/assets/template/js/popper.min.js',
+	 					 'resources/assets/template/js/bootstrap.min.js',
+	 					 'resources/assets/template/js/Chart.min.js',
+	 					 'resources/assets/template/js/pace.min.js',
+	 					 'resources/assets/template/js/template.js'], 
+	 					 'public/js/template.js');
